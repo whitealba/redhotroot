@@ -105,7 +105,7 @@ Welcome to Redhot Forex -
             </div>
         </div>
         <div class="col-md-4">
-            <h3 class="h3index">About me...</h3>
+            <h3 class="h3index">About...</h3>
             <div class="contentabout">
                 <p>My system is simple price action based trading using support and resistance. Does it work 100%. Sure not, but followed by
                 strict moneymanagement, can be very profitable. Follow and see for yourself.  </p>
