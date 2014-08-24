@@ -16,17 +16,27 @@ define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only
 if (!defined('WP_ENV')) {
   define('WP_ENV', 'production');  // scripts.php checks for values 'production' or 'development'
 }
+/**
+ * .main classes
+ */
+function roots_main_class() {
+  if (roots_display_sidebar()) {
+    // Classes on pages with the sidebar
+    $class = 'col-sm-8';
+  } else {
+    // Classes on full width pages
+    $class = 'col-sm-12';
+  }
+
+  return apply_filters('roots/main_class', $class);
+}
 
 /**
- * Add body class if sidebar is active
+ * .sidebar classes
  */
-function roots_sidebar_body_class($classes) {
-  if (roots_display_sidebar()) {
-    $classes[] = 'sidebar-primary';
-  }
-  return $classes;
+function roots_sidebar_class() {
+  return apply_filters('roots/sidebar_class', 'col-sm-4');
 }
-add_filter('body_class', 'roots_sidebar_body_class');
 
 /**
  * Define which pages shouldn't have the sidebar
@@ -47,8 +57,7 @@ function roots_display_sidebar() {
      */
     array(
       'is_404',
-      'is_front_page',
-      'is_page'
+      'is_front_page'
     ),
     /**
      * Page template checks (via is_page_template())

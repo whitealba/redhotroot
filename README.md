@@ -1,4 +1,4 @@
-Redhotroot v 2.0.0
+Redhotroot v 2.0.1
 ================
 
 Redhotroot wordpress theme based on Roots/Bootstrap
